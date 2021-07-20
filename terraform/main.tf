@@ -47,6 +47,7 @@ module "functions" {
     working_dir = "../functions"
     app_settings = {
       "FUNCTIONS_WORKER_RUNTIME" = "python"
+
     }
 
 }
