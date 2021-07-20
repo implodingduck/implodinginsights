@@ -37,3 +37,16 @@ resource "random_string" "unique" {
   special = false
   upper   = false
 }
+
+
+module "functions" {
+    source = "github.com/implodingduck/tfmodules//functionapp"
+    func_name = "${local.func_name}"
+    resource_group_name = azurerm_resource_group.rg.name
+    resource_group_location = azurerm_resource_group.rg.location
+    working_dir = "../functions"
+    app_settings = {
+      "FUNCTIONS_WORKER_RUNTIME" = "python"
+    }
+
+}
