@@ -33,7 +33,7 @@ stages:
             export ARM_CLIENT_ID=$servicePrincipalId
             export ARM_CLIENT_SECRET=$servicePrincipalKey
             export ARM_TENANT_ID=$tenantId
-            cd terraform
+            cd terraform/
             ./env_setup.sh
             echo $TF_VAR_container_name
             terraform init --backend-config=backend.tfvars
@@ -55,7 +55,7 @@ stages:
             export ARM_CLIENT_ID=$servicePrincipalId
             export ARM_CLIENT_SECRET=$servicePrincipalKey
             export ARM_TENANT_ID=$tenantId
-            cd terraform
+            cd terraform/
             terraform plan -out theplan
         env:
           TF_VAR_subscription_id: $(subscription-id)
@@ -76,7 +76,7 @@ stages:
             export ARM_CLIENT_SECRET=$servicePrincipalKey
             export ARM_TENANT_ID=$tenantId
             mv functions/local.settings.json.sample functions/local.settings.json 
-            cd terraform
+            cd terraform/
             terraform apply -auto-approve theplan
         env:
           TF_VAR_subscription_id: $(subscription-id)
