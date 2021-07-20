@@ -50,3 +50,14 @@ module "functions" {
     }
 
 }
+
+resource "null_resource" "build_linklist_react"{
+  triggers = {
+    #index = "2021-05-14T23:23:09Z"
+    index = "${timestamp()}"
+  }
+  provisioner "local-exec" {
+    working_dir = "linklist-react"
+    command     = "npm run build"
+  }
+}
