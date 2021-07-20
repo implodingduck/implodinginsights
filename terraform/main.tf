@@ -50,8 +50,8 @@ module "functions" {
 
     }
     app_identity = {
-        type = "SystemAssigned"
-        identity_ids = []
+        "type" = "SystemAssigned"
+        "identity_ids" = []
     }
 }
 
