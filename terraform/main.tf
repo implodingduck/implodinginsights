@@ -59,6 +59,6 @@ resource "null_resource" "build_linklist_react"{
   }
   provisioner "local-exec" {
     working_dir = "../ui"
-    command     = "npm run build"
+    command     = "npm install && npm run build"
   }
 }
