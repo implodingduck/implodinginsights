@@ -49,10 +49,7 @@ module "functions" {
       "FUNCTIONS_WORKER_RUNTIME" = "python"
 
     }
-    app_identity = {
-        "type" = "SystemAssigned"
-        "identity_ids" = []
-    }
+    
 }
 
 resource "null_resource" "build_linklist_react"{
