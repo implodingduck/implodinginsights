@@ -57,7 +57,7 @@ resource "null_resource" "build_linklist_react"{
     index = "${timestamp()}"
   }
   provisioner "local-exec" {
-    working_dir = "linklist-react"
+    working_dir = "../ui"
     command     = "npm run build"
   }
 }
