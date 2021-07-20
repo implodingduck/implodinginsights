@@ -49,6 +49,10 @@ module "functions" {
       "FUNCTIONS_WORKER_RUNTIME" = "python"
 
     }
+    app_identity {
+        type = "SystemAssigned"
+        identity_ids = []
+    }
 
 }
 
