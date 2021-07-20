@@ -53,7 +53,6 @@ module "functions" {
         type = "SystemAssigned"
         identity_ids = []
     }
-
 }
 
 resource "null_resource" "build_linklist_react"{
